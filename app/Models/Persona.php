@@ -18,4 +18,9 @@ class Persona extends Model
         'edad'
 
     ];
+
+    /** Relaciónes que existen */
+    public function asistencias(){
+        return $this->hasMany(AsistenciaPersonal::class);
+    }
 }
