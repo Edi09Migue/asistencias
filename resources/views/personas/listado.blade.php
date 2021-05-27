@@ -17,6 +17,7 @@
 <th>Apellidos</th>
 <th>Cedula</th>
 <th>Email</th>
+<th>Habilidades</th>
 <th>Acciones</th>
 </tr>
 </thead>
@@ -28,11 +29,16 @@
 <td>{{$persona->cedula}}</td>
 <td>{{$persona->edad}}</td>
 <td>{{$persona->email}}</td>
+<td>0</td>
 
 <td>
 <a href="{{ route('personas.edit',$persona->id) }}">Editar</a>
-<a href="#">Enviar</a>
+<form action="{{ route('personas.destroy',$persona->id)}}" method="post">
 
+@csrf
+@method('delete')
+<button type="submit">Eliminar</a>
+</form>
 </td>
 
 </tr>

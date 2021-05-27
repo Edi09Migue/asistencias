@@ -112,7 +112,8 @@ class Personas extends Controller
      */
     public function destroy(Persona $persona)
     {
-        //
+        $persona->delete();
+        return redirect()->route('personas.index');
     }
 
     public function desactivar(Persona $persona)

@@ -47,10 +47,20 @@ Route::post('/personas',[Personas::class,'store'])-> name('personas.store');
 //ruta para guar la persona update
 Route::put('/personas/{persona}',[Personas::class,'update'])-> name('personas.update');
 
-//adicionales
 
+//Borrar 
+Route::delete('/personas/{persona}',[Personas::class,'destroy'])-> name('personas.destroy');
+
+//adicionales
 Route::put('/personas/{persona}/desactivar',[Personas::class,'desactivar'])-> name('personas.desactivar');
 
+
 //rutas para Asistencias
-Route::get('/asistencias',[Asistencias::class,'index'])->name('asistencia_personal.index');
+Route::get('/asistencias',[Asistencias::class,'index'])->name('asistencias.index');
+Route::get('/asistencias/create',[Asistencias::class,'create'])->name('asistencias.create');
+Route::get('/asistencias/{asistencia}/edit',[Asistencias::class,'edit'])->name('asistencias.edit');
+Route::get('/asistencias/show/{asistencia}',[Asistencias::class,'show']);
+Route::post('/asistencias',[Asistencias::class,'store'])-> name('asistencias.store');
+Route::put('/asistencias/{asistencia}',[Asistencias::class,'update'])-> name('asistencias.update');
+
 

@@ -16,13 +16,13 @@ class Asistencias extends Controller
      */
     public function index()
     {
-        $asistenciaPersonal = AsistenciaPersonal::all(); 
-        return response()->json($asistenciaPersonal);
+        $asistencias = AsistenciaPersonal::all(); 
+        //return response()->json($asistencias);
 
-        //return view('personas.listado',[
+        return view('asistencias.listado',[
     
-        //'asistencias'=> $asistenciaPersonal
-        //]);
+        'asistencias'=> $asistencias
+        ]);
         
     }
 
@@ -66,7 +66,10 @@ class Asistencias extends Controller
      */
     public function edit(AsistenciaPersonal $asistenciaPersonal)
     {
-        //
+        return view('asistencias.edit', [
+            'asistencia' => $asistenciaPersonal
+
+        ]);
     }
 
     /**
