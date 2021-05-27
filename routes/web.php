@@ -65,12 +65,12 @@ Route::put('/habilidades/{habilidad}',[Habilidades::class,'update'])->name('habi
 
 
 //rutas para Asistencias
-Route::get('/asistencias',[Asistencias::class,'index'])->name('asistencia_personal.index');
+Route::get('/asistencias',[Asistencias::class,'index'])->name('asistencias.index');
 Route::get('/asistencias/create',[Asistencias::class,'create'])->name('asistencias.create');
 Route::post('/asistencias',[Asistencias::class,'store'])->name('asistencias.store');
-Route::get('/asistencias/{habilidad}',[Asistencias::class,'show'])->name('asistencias.show');
-Route::get('/asistencias/edit',[Asistencias::class,'edit'])->name('asistencias.edit');
-Route::put('/asistencias/{habilidad}',[Asistencias::class,'update'])->name('asistencias.update');
+Route::get('/asistencias/{asistencia}',[Asistencias::class,'show'])->name('asistencias.show');
+Route::get('/asistencias/{asistencia}/edit',[Asistencias::class,'edit'])->name('asistencias.edit');
+Route::put('/asistencias/{asistencia}',[Asistencias::class,'update'])->name('asistencias.update');
 
 
 

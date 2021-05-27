@@ -16,13 +16,13 @@ class Asistencias extends Controller
      */
     public function index()
     {
-        $AsistenciaPersonal = AsistenciaPersonal::all(); 
-        return response()->json($AsistenciaPersonal);
+        $asistencias = AsistenciaPersonal::all(); 
+        //return response()->json($asistencia);
 
-        //return view('personas.listado',[
+        return view('asistencias.listado',[
     
-        //'asistencias'=> $asistenciaPersonal
-        //]);
+        'asistencias'=> $asistencias
+        ]);
         
     }
 
