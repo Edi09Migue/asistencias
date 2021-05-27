@@ -51,4 +51,3 @@ Route::put('/team/{persona}/desactivar',[Personas::class,'desactivar'])-> name('
 
 
 
-
