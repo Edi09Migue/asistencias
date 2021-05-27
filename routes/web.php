@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Asistencias;
 use App\Http\Controllers\Personas;
+use App\Models\AsistenciaPersonal;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,25 +31,26 @@ Route::get('/',function(){
 });
 
 // Route::tipo ('ruta',[Controlador::class,'metodo']);
-Route::get('/team',[Personas::class,'index'])->name('personas.index');
+Route::get('/personas',[Personas::class,'index'])->name('personas.index');
 
-Route::get('/team/crear',[Personas::class,'create'])->name('personas.create');
+Route::get('/personas/crear',[Personas::class,'create'])->name('personas.create');
 
 
 // para obtener los datos formulario de edicion  
-Route::get('/team/{persona}/edit',[Personas::class,'edit'])->name('personas.edit');
+Route::get('/personas/{persona}/edit',[Personas::class,'edit'])->name('personas.edit');
 
 
-Route::get('/team/show/{persona}',[Personas::class,'show']);
+Route::get('/personas/show/{persona}',[Personas::class,'show']);
 
-Route::post('/team',[Personas::class,'store'])-> name('personas.store');
+Route::post('/personas',[Personas::class,'store'])-> name('personas.store');
 
 //ruta para guar la persona update
-Route::put('/team/{persona}',[Personas::class,'update'])-> name('personas.update');
+Route::put('/personas/{persona}',[Personas::class,'update'])-> name('personas.update');
 
 //adicionales
 
-Route::put('/team/{persona}/desactivar',[Personas::class,'desactivar'])-> name('personas.desactivar');
+Route::put('/personas/{persona}/desactivar',[Personas::class,'desactivar'])-> name('personas.desactivar');
 
-
+//rutas para Asistencias
+Route::get('/asistencias',[Asistencias::class,'index'])->name('asistencia_personal.index');
 
