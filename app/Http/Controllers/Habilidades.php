@@ -85,7 +85,7 @@ class Habilidades extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     *Cambio
      * @param  \App\Models\Habilidad  $habilidad
      * @return \Illuminate\Http\Response
      */
