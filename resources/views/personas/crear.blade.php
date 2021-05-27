@@ -8,6 +8,19 @@
 </head>
 <body>
     <h2>Crreacion de Personas</h2>
+    @if($errors->any())
+    <div class="alert alert-danger">
+    <ul>
+    @foreach ($errors as )
+        
+    @endforeach
+    </ul>
+
+
+
+
+
+
     <form action="{{ route('personas.store')}}" method="post">
     @csrf
     <div>
