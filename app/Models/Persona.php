@@ -19,8 +19,14 @@ class Persona extends Model
 
     ];
 
-    /** Relaciónes que existen */
+    /** Relaciónes que existen 1 */
     public function asistencias(){
         return $this->hasMany(AsistenciaPersonal::class);
     }
+
+     /** Relaciónes que existen 1 */
+     public function habilidades(){
+        return $this->hasMany(Habilidad::class);
+    }
+     
 }

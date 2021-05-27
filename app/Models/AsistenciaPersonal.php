@@ -19,7 +19,7 @@ class AsistenciaPersonal extends Model
 
     ];
 
-      /** Relaciónes que existen */
+      /** Relaciónes que existen 1 */
       public function persona(){
         return $this->belongsTo(Persona::class);
     }

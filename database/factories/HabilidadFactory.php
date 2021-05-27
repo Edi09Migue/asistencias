@@ -23,10 +23,11 @@ class HabilidadFactory extends Factory
     {
        
         return [
-            'nombres' => $this->faker->name,
+            'nombres' => $this->faker->randomElement($array = array ('Java',' C#','NodeJS')), 
             'porcentajes' => rand(1,100),
-            'orden' => rand(1,50)
+            'orden' => rand(1,10)
    
            ];
     }
+
 }
