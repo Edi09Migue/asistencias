@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 use Tests\TestCase;
 
-class PersonasTest extends TestCase
+class HabilidadesTest extends TestCase
 {
     //ingresamoso base de datos
     use DatabaseMigrations;

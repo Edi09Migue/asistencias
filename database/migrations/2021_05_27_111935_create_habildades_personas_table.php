@@ -15,10 +15,13 @@ class CreateHabildadesPersonasTable extends Migration
     {
         Schema::create('habildades_personas', function (Blueprint $table) {
             $table->id();
+           //definir la relación falta sale errorgit   
             $table->string('nombres');
             $table->integer('porcentajes'); 
             $table->integer('orden'); 
             $table->timestamps();
+
+
         });
     }
 
