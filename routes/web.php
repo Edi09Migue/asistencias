@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Asistencias;
+use App\Http\Controllers\Habilidades;
 use App\Http\Controllers\Personas;
 use App\Models\AsistenciaPersonal;
 use Illuminate\Support\Facades\Route;
@@ -55,12 +56,24 @@ Route::delete('/personas/{persona}',[Personas::class,'destroy'])-> name('persona
 Route::put('/personas/{persona}/desactivar',[Personas::class,'desactivar'])-> name('personas.desactivar');
 
 
+
+//rutas para Habilidades
+Route::get('/habilidades',[Habilidades::class,'index'])->name('habilidades.index');
+Route::get('/habilidades/create',[Habilidades::class,'create'])->name('habilidades.create');
+Route::post('/habilidades',[Habilidades::class,'store'])->name('habilidades.store');
+Route::get('/habilidades/{habilidad}',[Habilidades::class,'show'])->name('habilidades.show');
+Route::get('/habilidades/{habilidad}/edit',[Habilidades::class,'edit'])->name('habilidades.edit');
+Route::put('/habilidades/{habilidad}',[Habilidades::class,'update'])->name('habilidades.update');
+
+
+
 //rutas para Asistencias
 Route::get('/asistencias',[Asistencias::class,'index'])->name('asistencias.index');
 Route::get('/asistencias/create',[Asistencias::class,'create'])->name('asistencias.create');
+Route::post('/asistencias',[Asistencias::class,'store'])->name('asistencias.store');
+Route::get('/asistencias/{asistencia}',[Asistencias::class,'show'])->name('asistencias.show');
 Route::get('/asistencias/{asistencia}/edit',[Asistencias::class,'edit'])->name('asistencias.edit');
-Route::get('/asistencias/show/{asistencia}',[Asistencias::class,'show']);
-Route::post('/asistencias',[Asistencias::class,'store'])-> name('asistencias.store');
-Route::put('/asistencias/{asistencia}',[Asistencias::class,'update'])-> name('asistencias.update');
+Route::put('/asistencias/{asistencia}',[Asistencias::class,'update'])->name('asistencias.update');
+
 
 
