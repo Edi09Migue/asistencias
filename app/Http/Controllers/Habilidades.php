@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AsistenciaPersonal;
-use App\Models\Persona;
-use Database\Seeders\AsistenciasPersonalSeeder;
+use App\Models\Habilidad;
 use Illuminate\Http\Request;
 
-class Asistencias extends Controller
+class Habilidades extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +14,10 @@ class Asistencias extends Controller
      */
     public function index()
     {
-        $AsistenciaPersonal = AsistenciaPersonal::all(); 
-        return response()->json($AsistenciaPersonal);
-
-        //return view('personas.listado',[
-    
-        //'asistencias'=> $asistenciaPersonal
-        //]);
-        
+        $habilidades = Habilidad::all(); 
+        return view('habilidades.listado',[
+        'habilidades'=> $habilidades
+        ]);
     }
 
     /**
@@ -33,7 +27,7 @@ class Asistencias extends Controller
      */
     public function create()
     {
-        //
+        return view('habilidades.create');
     }
 
     /**
@@ -44,50 +38,58 @@ class Asistencias extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $habilidad = Habilidad::create($request->all());
+        return response()->json($habilidad);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AsistenciaPersonal  $asistenciaPersonal
+     * @param  \App\Models\Habilidad  $habilidad
      * @return \Illuminate\Http\Response
      */
-    public function show(AsistenciaPersonal $asistenciaPersonal)
+    public function show(Habilidad $habilidad)
     {
-        //
+        return response()->json($habilidad);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AsistenciaPersonal  $asistenciaPersonal
+     * @param  \App\Models\Habilidad  $habilidad
      * @return \Illuminate\Http\Response
      */
-    public function edit(AsistenciaPersonal $asistenciaPersonal)
+    public function edit(Habilidad $habilidad)
     {
-        //
+        return view('habilidades.edit', [
+            'habilidad' => $habilidad
+
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AsistenciaPersonal  $asistenciaPersonal
+     * @param  \App\Models\Habilidad  $habilidad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AsistenciaPersonal $asistenciaPersonal)
+    public function update(Request $request, Habilidad $habilidad)
     {
-        //
+        $habilidad->fill($request->all());
+        $habilidad->save();
+
+    return redirect()->route('habilidades.index');
+    //return response()->json($persona);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AsistenciaPersonal  $asistenciaPersonal
+     * @param  \App\Models\Habilidad  $habilidad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AsistenciaPersonal $asistenciaPersonal)
+    public function destroy(Habilidad $habilidad)
     {
         //
     }
