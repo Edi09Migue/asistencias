@@ -1,6 +1,9 @@
 @extends('templates.main')
 @section('title','Listado de personas')
 @section('contenido')
+
+<example-component></example-component>
+
 <h1>Listado de personas</h1>
 
 
