@@ -55,7 +55,7 @@ class Personas extends Controller
 
         //Lllega el formulario hasta aqui y crea un array en base al formulario 
         //retorna la persona que creamos
-        return response()->json($persona);
+        return redirect()-> route('personas.index')->with('success','Usuario creado correctamente');
     }
 
     /**

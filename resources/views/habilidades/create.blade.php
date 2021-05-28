@@ -10,6 +10,17 @@
     <h2>Crreacion de Habilidades</h2>
     <form action="{{ route('habilidades.store')}}" method="post">
     @csrf
+
+    <div>
+    <label for="nombres">Persona *</label>
+    <select>
+    @foreach ($personas as $persona)
+    <option value = "{{$persona -> id}}"> {{$persona->nombres}} {{$persona->apellidos}} </option>
+    @endforeach
+    </select>
+
+    </div>
+
     <div>
     <label for="nombres">Nombres *</label>
     <input type="text" name="nombres" placeholder="Ingrese su nombre" required>

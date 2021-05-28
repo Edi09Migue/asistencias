@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de personas</title>
-</head>
-<body>
+@extends('templates.main')
+@section('title','Listado de personas')
+@section('contenido')
 <h1>Listado de personas</h1>
+
+
+
 <a href="{{ route('personas.create') }}" > Nuevo </a>
 
-<table border="1">
+<table class="table table-dark table-bordered table-striped">
 <thead>
 <tr>
+<th>#</th>
 <th>Nombres</th>
 <th>Apellidos</th>
 <th>Cedula</th>
@@ -23,7 +21,8 @@
 </thead>
 <tbody>
 @foreach ($personas as $persona)
-<tr>
+<tr class="@if($loop->first) table-danger @endif">
+<td>{{$loop->iteration}}</td>
 <td>{{$persona->nombres}}</td>
 <td>{{$persona->apellidos}}</td>
 <td>{{$persona->cedula}}</td>
@@ -32,21 +31,18 @@
 <td>0</td>
 
 <td>
-<a href="{{ route('personas.edit',$persona->id) }}">Editar</a>
+<a class="btn btn-outline-primary" href="{{ route('personas.edit',$persona->id) }}">Editar</a>
 <form action="{{ route('personas.destroy',$persona->id)}}" method="post">
 
 @csrf
 @method('delete')
-<button type="submit">Eliminar</a>
+<button class="btn btn-outline-danger" type="submit">Eliminar</a>
 </form>
 </td>
 
-</tr>
-
-    
+</tr>    
 @endforeach
 </tbody>
 </table>
-    
-</body>
-</html>
+
+@endsection

@@ -15,7 +15,9 @@ class CreateHabildadesPersonasTable extends Migration
     {
         Schema::create('habildades_personas', function (Blueprint $table) {
             $table->id();
-           //definir la relación falta sale errorgit   
+            $table->unsignedBigInteger('persona_id');
+            $table->foreign('persona_id')->references('id')
+            -> on('personas'); //definir relación Del mismo tipo int  
             $table->string('nombres');
             $table->integer('porcentajes'); 
             $table->integer('orden'); 

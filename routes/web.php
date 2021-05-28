@@ -31,6 +31,11 @@ Route::get('/',function(){
     return "Hola desde rutas";
 });
 
+//Ruta para el main clase 3
+Route::get('/main',function(){
+  return view('templates.main');
+});
+
 // Route::tipo ('ruta',[Controlador::class,'metodo']);
 Route::get('/personas',[Personas::class,'index'])->name('personas.index');
 

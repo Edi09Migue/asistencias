@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Habilidad;
+use App\Models\Persona;
 use Illuminate\Http\Request;
 
 class Habilidades extends Controller
@@ -27,7 +28,10 @@ class Habilidades extends Controller
      */
     public function create()
     {
-        return view('habilidades.create');
+        $personas = Persona::select('id','nombres','apellidos')->get();
+        return view('habilidades.create',[
+        'personas' => $personas
+        ]);
     }
 
     /**

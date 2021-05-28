@@ -16,6 +16,8 @@ class HabilidadesSeeder extends Seeder
     {
     //Manera de crear una persona 
     $habilidadPersona = new Habilidad();
+        
+    $habilidadPersona->persona_id = 1;
     $habilidadPersona->nombres = "Php";
     $habilidadPersona->porcentajes = "60";
     $habilidadPersona->orden = "1";
